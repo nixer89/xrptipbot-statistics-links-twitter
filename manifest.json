@@ -2,9 +2,9 @@
   "manifest_version": 2,
   "name": "XRPTipBot Statistics Link on Twitter",
   "short_name": "XRPTipBot Statistics Link",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "Daniel Siedentopf",
-  "description": "Adds a link to the @xrptipbot statistics page of the user who created the tweet in your time line",
+  "description": "Adds a link in twitter to the XRPTipBot statistics page of the user who tweeted.",
   "icons": {	
 				"16": "icon_16.png",
 				"48": "icon_48.png",

@@ -1,8 +1,10 @@
 var url = document.URL;
+
+//mobile twitter needs other handling than standard twitter
 if(url.includes('mobile.twitter.com'))
-	setInterval(addStatisticsLinkMobile ,2000)
+	setInterval(addStatisticsLinkMobile, 2000)
 else
-	setInterval(addStatisticsLink ,2000)
+	setInterval(addStatisticsLink, 2000)	
 
 function addStatisticsLink() {
 	var allActionLinks = document.getElementsByClassName('ProfileTweet-actionList js-actions');
