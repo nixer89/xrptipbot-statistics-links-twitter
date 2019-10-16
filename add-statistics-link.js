@@ -92,8 +92,8 @@ function addStatisticsLinkMobile() {
 						}
 						else {
 							newLinkDiv = document.createElement('DIV');
-							newLinkDiv.setAttribute('class','css-1dbjc4n r-18u37iz r-1h0z5md r-3qxfft r-h4g966 r-rjfia xrptipbot-statistics-button');
-							a.setAttribute('class','css-18t94o4 css-1dbjc4n r-1777fci r-11cpok1 r-bztko3 r-lrvibr');
+							newLinkDiv.setAttribute('class','xrptipbot-statistics-button');
+							newLinkDiv.style.marginLeft = '15%';
 						}						
 						
 						var img = document.createElement('img');
