@@ -63,7 +63,7 @@ function addStatisticsLinkMobile() {
 	var allActionLinks = []
 	var divs = slice.call(document.getElementsByTagName('div'));
 	for(var j = 0; j < divs.length; j++) {
-		if(divs[j] && divs[j].getAttribute('data-testid') && divs[j].getAttribute('data-testid') == 'like')
+		if(divs[j] && divs[j].getAttribute('data-testid') && (divs[j].getAttribute('data-testid') === 'like' ||divs[j].getAttribute('data-testid') === 'unlike'))
 			allActionLinks.push(divs[j].parentElement.parentElement);
 	}
 	
