@@ -78,6 +78,10 @@ function addStatisticsLinkMobile() {
 					
 					//check if icons exists already
 					if(actionListDiv && actionListDiv.getElementsByClassName('xrptipbot-statistics-button').length==0) {
+						var surroundingDiv = document.createElement('DIV');
+						surroundingDiv.className = actionListDiv.children[0].className + ' xrptipbot-statistics-button';
+						surroundingDiv.style.justifyContent = "flex-end";
+
 						var newLinkDiv;
 						var emptyDiv = actionListDiv.getElementsByClassName('css-1dbjc4n r-1mlwlqe r-18kxxzh r-199wky7');
 						
@@ -92,9 +96,9 @@ function addStatisticsLinkMobile() {
 						}
 						else {
 							newLinkDiv = document.createElement('DIV');
-							newLinkDiv.setAttribute('class','xrptipbot-statistics-button');
-							newLinkDiv.style.marginLeft = '15%';
-						}						
+							newLinkDiv.setAttribute('class', actionListDiv.children[0].children[0].className +' xrptipbot-statistics-button');
+						}
+
 						
 						var img = document.createElement('img');
 						img.style.width = '18px';
@@ -110,7 +114,8 @@ function addStatisticsLinkMobile() {
 						
 						a.appendChild(img);
 						newLinkDiv.appendChild(a);
-						actionListDiv.appendChild(newLinkDiv);
+						surroundingDiv.appendChild(newLinkDiv);
+						actionListDiv.appendChild(surroundingDiv);
 					}
 				}
 			}
