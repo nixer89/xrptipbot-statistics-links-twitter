@@ -63,17 +63,25 @@ function addStatisticsLinkMobile() {
 	var allActionLinks = []
 	var divs = slice.call(document.getElementsByTagName('div'));
 	for(var j = 0; j < divs.length; j++) {
-		if(divs[j] && divs[j].getAttribute('data-testid') && (divs[j].getAttribute('data-testid') === 'like' ||divs[j].getAttribute('data-testid') === 'unlike'))
+		if(divs[j] && divs[j].getAttribute('data-testid') && (divs[j].getAttribute('data-testid') === 'like' || divs[j].getAttribute('data-testid') === 'unlike'))
 			allActionLinks.push(divs[j].parentElement.parentElement);
 	}
 	
 	var i;
 	try {
-		for (i = 0; i < allActionLinks.length; i++) {
+		for (var i = 0; i < allActionLinks.length; i++) {
 			if(allActionLinks[i].parentElement) {
-				var tweetHeaderSpan =  allActionLinks[i].parentElement.getElementsByTagName('a');
-				if(tweetHeaderSpan &&  tweetHeaderSpan[0]) {
-					var userHandle = tweetHeaderSpan[0].href.substring(tweetHeaderSpan[0].href.lastIndexOf('/')+1);
+				var tweetHeaderSpanAll =  allActionLinks[i].parentElement.getElementsByTagName('a');
+				var tweetHeaderSpan;
+
+				for(var j = 0; j < tweetHeaderSpanAll.length; j++) {
+					if(tweetHeaderSpanAll[j].getAttribute('aria-haspopup') != null) {
+						tweetHeaderSpan = tweetHeaderSpanAll[j];
+						break;
+					}
+				}
+				if(tweetHeaderSpan) {
+					var userHandle = tweetHeaderSpan.href.substring(tweetHeaderSpan.href.lastIndexOf('/')+1);
 					var actionListDiv =  allActionLinks[i];
 					
 					//check if icons exists already
